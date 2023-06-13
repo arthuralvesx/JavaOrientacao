@@ -1,6 +1,6 @@
-package Aula2;
+package ExercicioReforco;
 
-public class Ex02aula {
+public class Ex02_aula2 {
 
 	public static void main(String[] args) {
 

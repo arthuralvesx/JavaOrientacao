@@ -1,4 +1,4 @@
-package Aula2;
+package ExercicioReforco;
 
 public class ExFibonacci {
 
