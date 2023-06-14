@@ -2,14 +2,15 @@ package Aula03;
 
 import java.util.Date;
 
-public class Conta {
+public abstract class Conta {
 	
 	// atributos
-	private int numeroConta, agencia;
-	private String senha;
-	private Date dataAbertura;
-	private double saldo;
-	private Cliente cliente; //composição
+	protected int numeroConta, agencia;
+	protected String senha;
+	protected Date dataAbertura;
+	protected double saldo;
+	protected Cliente cliente; //composição
+	private static long contador;
 	
 	// construtor
 	public Conta(Cliente cliente, int numeroConta, int agencia,
@@ -21,8 +22,13 @@ public class Conta {
 		this.senha = senha;
 		System.out.println("Conta criado");
 		System.out.println("Data abertura: " + this.dataAbertura);
+		contador++;
 	}
 	
+	public Conta(Cliente cliente2, long numeroConta2) {
+		// TODO Auto-generated constructor stub
+	}
+
 	// Métodods
 	// sacar
 	public boolean sacar(double valor){
@@ -39,9 +45,12 @@ public class Conta {
 	}
 	
 	// consulatSaldo
-	public void exibirSaldo() {
-		System.out.println(this.cliente.getNomeTitular() + " - saldo: " + this.saldo);
-	}
+	public abstract void exibirSaldo();
+		//abstract no método força a reescrita.
+	
+
+		
+	
 	
 	//transferir
 	public void transferir(Conta conta, double valor) {
@@ -51,7 +60,10 @@ public class Conta {
 
 	}
 	
+	}
 	
-	
+	public static  void exibirContador() {
+		System.out.println("Contas: " + contador);
+		
 	}
 }
