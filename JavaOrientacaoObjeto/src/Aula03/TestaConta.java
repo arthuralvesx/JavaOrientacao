@@ -1,10 +1,11 @@
 package Aula03;
 
+import java.text.ParseException;
 import java.util.Date;
 
 public class TestaConta {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException {
 		
 		
 		CDB cdb = new CDB();
@@ -13,8 +14,9 @@ public class TestaConta {
 		
 		
 		// objetos
-		Cliente arthur = new Cliente("Arthur"+ "", "123456789", "Rua X, 123", null);
-		Cliente luiza = new Cliente("Luiza", "987654321", "Rua z, 231", null);
+		Cliente arthur = new Cliente("Arthur", "123456789", "123453235", "Rua X, 123", "11/00/1998");
+		Cliente luiza = new Cliente("Luiza", "987654321", "134362378", "Rua z, 231", "09/12/1979");
+		
 		ContaCorrente contaArthur = new ContaCorrente(arthur , 1, 1,"teste");
 		ContaCorrente contaLuiza = new ContaCorrente(luiza , 2, 1, "teste");
 		
@@ -35,6 +37,14 @@ public class TestaConta {
 		
 	
 		Conta.exibirContador();
+		
+		
+		System.out.println(contaArthur);
+		System.out.println(arthur.getNomeTitular());
+		
+		
+		
+		
 
 	}
 

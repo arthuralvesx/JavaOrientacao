@@ -9,7 +9,7 @@ public abstract class Conta {
 	protected String senha;
 	protected Date dataAbertura;
 	protected double saldo;
-	protected Cliente cliente; //composição
+	protected final Cliente cliente; //composição
 	private static long contador;
 	
 	// construtor
@@ -25,11 +25,9 @@ public abstract class Conta {
 		contador++;
 	}
 	
-	public Conta(Cliente cliente2, long numeroConta2) {
-		// TODO Auto-generated constructor stub
-	}
-
+	
 	// Métodods
+	
 	// sacar
 	public boolean sacar(double valor){
 		if(this.saldo >= valor) {
@@ -41,26 +39,21 @@ public abstract class Conta {
 			
 	// depositar
 	public void depositar(double valor) {
-		this.saldo += valor;
+		if (valor > 0) {
+			this.saldo += valor;
+		}
 	}
-	
-	// consulatSaldo
-	public abstract void exibirSaldo();
-		//abstract no método força a reescrita.
-	
-
 		
-	
-	
 	//transferir
 	public void transferir(Conta conta, double valor) {
 		boolean teste = this.sacar(valor);
 		if(teste==true) {
-		conta.depositar(valor);
-
+			conta.depositar(valor);
+		}	
 	}
 	
-	}
+	public abstract void exibirSaldo(); //abstract no método força a reescrita.
+	
 	
 	public static  void exibirContador() {
 		System.out.println("Contas: " + contador);

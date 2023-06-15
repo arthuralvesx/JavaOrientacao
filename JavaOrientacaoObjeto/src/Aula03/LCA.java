@@ -4,7 +4,7 @@ public class LCA implements Produto {
 
 	@Override
 	public double investir(double valor) {
-		return valor * 1.09;
+		return valor * (1 + 0.9);
 	}
 
 }
