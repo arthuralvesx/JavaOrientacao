@@ -12,6 +12,7 @@ public abstract class Conta {
 	protected final Cliente cliente; //composição
 	private static long contador;
 	
+	
 	// construtor
 	public Conta(Cliente cliente, int numeroConta, int agencia,
 			String senha) {
@@ -29,12 +30,14 @@ public abstract class Conta {
 	// Métodods
 	
 	// sacar
-	public boolean sacar(double valor){
+	public boolean sacar(double valor) throws SaldoInsuficiente{
 		if(this.saldo >= valor) {
 			this.saldo -= valor;
 			return true;
+		}else {
+			throw new SaldoInsuficiente ("Saldo insuficiente, tente novamente");
 		}
-		return false;
+		
 	}
 			
 	// depositar
@@ -45,11 +48,14 @@ public abstract class Conta {
 	}
 		
 	//transferir
-	public void transferir(Conta conta, double valor) {
+	public void transferir(Conta conta, double valor) throws SaldoInsuficiente {
 		boolean teste = this.sacar(valor);
 		if(teste==true) {
 			conta.depositar(valor);
-		}	
+		}else {
+			throw new SaldoInsuficiente("SALDO INSUFICIENTE PARA TRANSFERENCIA");
+			
+		}
 	}
 	
 	public abstract void exibirSaldo(); //abstract no método força a reescrita.

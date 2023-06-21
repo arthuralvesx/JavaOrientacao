@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class TestaConta {
 
-	public static void main(String[] args) throws ParseException {
+	public static void main(String[] args) throws ParseException, SaldoInsuficiente {
 		
 		
 		CDB cdb = new CDB();
