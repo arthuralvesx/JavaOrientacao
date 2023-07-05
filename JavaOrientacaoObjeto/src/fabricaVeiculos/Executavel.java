@@ -14,8 +14,8 @@ public class Executavel {
 		carro.abastecimento(gasolina, 10);
 		
 		
-		System.out.println("Quantidade no Tanque: " + carro.getqtdNoTanque());
-		System.out.println("Rendimento: " + carro.getabastecimento());
+//		System.out.println("Quantidade no Tanque: " + carro.getqtdNoTanque());
+//		System.out.println("Rendimento: " + carro.getabastecimento());
 		
 		
 

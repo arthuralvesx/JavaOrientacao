@@ -116,7 +116,7 @@ public class Principal {
 			//"defaut" ele serve para caso nao entre em nenhum "case" enviar uma mensagem ao usuario 
 		 default:
 			  Object[] options = {"OK"};
-		      JOptionPane.showOptionDialog(null,"Digite um veiculo correto por favor! ", "Aviso", JOptionPane.DEFAULT_OPTION, null, options, options[0]);
+//		      JOptionPane.showOptionDialog(null,"Digite um veiculo correto por favor! ", "Aviso", JOptionPane.DEFAULT_OPTION, null, options, options[0]);
 			
 		}
 	
